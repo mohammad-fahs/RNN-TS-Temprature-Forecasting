@@ -5,7 +5,7 @@
 ## What is the timeseries data
 
 Time series data is a sequence of data points collected or recorded at specific time intervals over a period of time. This type of data is fundamental to many fields, including economics, finance, weather forecasting, and IoT applications. A time series is a chronological sequence of observations on a particular variable. The observations are typically taken at equally spaced time intervals such as hourly, daily, weekly, monthly, quarterly, or annually. Each data point is associated with a specific timestamp, making the time dimension an essential component of the data structure.
-
+f
 ## Key characteristics of time series data
 
 ### Temporal Ordering
@@ -162,7 +162,8 @@ This creates individual time series plots for each climate variable (`meantemp`,
 df.plot(subplots=True, figsize=(15, 10), title='Climate Variables Over Time')
 ```
 
-![image.png](image.png)
+![image](https://github.com/user-attachments/assets/75fbe975-3eb7-4800-bafb-f94afc460313)
+
 
 ### 2- Outlier detection
 
@@ -184,7 +185,8 @@ monthly_df = df['meantemp'].resample('M').mean()
 monthly_df.plot(title='Monthly Mean Temperature')
 ```
 
-![image.png](image%201.png)
+![image 1](https://github.com/user-attachments/assets/6e699cca-e086-4c7d-b150-f72b8863bfb6)
+
 
 ### 4- Seasonal Decomposition of Temperature
 
@@ -205,7 +207,8 @@ result.plot()
 
 → Residual values fluctuate roughly between **5 and +5**, suggesting a relatively small amount of noise or random variation. No significant anomalies in residuals, indicating that the decomposition model fits the data well.
 
-![image.png](image%202.png)
+![image 2](https://github.com/user-attachments/assets/05614f3e-7dbe-46dd-bf58-89a50dba2d89)
+
 
 ### 5- Feature Correlation Matrix
 
@@ -214,8 +217,8 @@ heatmap shows **pairwise Pearson correlation coefficients** between the climate 
 ```python
 sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
 ```
+![image 3](https://github.com/user-attachments/assets/2dfe178d-5d40-45bf-8515-43faffd60208)
 
-![image.png](image%203.png)
 
 | Variable Pair | Correlation | Interpretation |
 | --- | --- | --- |
@@ -231,7 +234,8 @@ df['meantemp'].rolling(window=30).mean().plot(label='30-day Mean')
 df['meantemp'].rolling(window=30).std().plot(label='30-day Std')
 ```
 
-![image.png](image%204.png)
+![image 4](https://github.com/user-attachments/assets/86b04ece-9b0b-4e32-810c-11066b6036d7)
+
 
 → The **rolling mean** clearly shows **annual seasonality**.  The **rolling std** is relatively low and stable, indicating consistent temperature variability year to year.
 
@@ -255,7 +259,8 @@ The autocorrelation plot shows how the temperature values are correlated with th
 
 The partial autocorrelation plot shows the direct correlation between an observation and its lag after removing the effects of intermediate observations, This pattern suggests that once you account for the immediate previous 1-2 days' temperatures, further lags don't add significant explanatory power
 
-![image.png](image%205.png)
+![image 5](https://github.com/user-attachments/assets/39bb77ab-aeed-4121-be09-74e3c3857f08)
+
 
 ### 9- **ADF Test**
 
@@ -433,9 +438,11 @@ history = model.fit(
 
 ## 3 months prediction
 
-![image.png](image%206.png)
+![image 6](https://github.com/user-attachments/assets/baace9a3-bc7e-45bf-94b7-c978cfef6922)
 
-![image.png](image%207.png)
+![image 7](https://github.com/user-attachments/assets/2c0f9402-72fb-4339-aa2f-9204d0ae65c2)
+
+
 
 ### Model Validation
 
@@ -447,10 +454,10 @@ MAPE: 8.11%
 ```
 
 ## 1 year prediction
+![image 8](https://github.com/user-attachments/assets/6f7ef89a-3deb-4886-b0c9-c9ada2fe77e3)
 
-![image.png](image%208.png)
+![image 9](https://github.com/user-attachments/assets/3808708f-eeeb-4605-a117-dc89c73eacef)
 
-![image.png](image%209.png)
 
 ### Model Validation
 
@@ -525,10 +532,10 @@ history = model.fit(
 | **Model Capacity** | Lower | Higher (can learn more complex patterns) |
 
 ## 3 months prediction
+![image 10](https://github.com/user-attachments/assets/5cc01370-e0d6-4149-a41a-9be5d34d4b0f)
+![image 11](https://github.com/user-attachments/assets/3b12a650-0517-40f4-89e0-75fb82ba2064)
 
-![image.png](image%2010.png)
 
-![image.png](image%2011.png)
 
 ### Validation
 
@@ -540,10 +547,10 @@ MAPE: 6.72%
 ```
 
 ## 1 year prediction
+![image 12](https://github.com/user-attachments/assets/b0d264bc-d77d-4ce1-b0cc-f4db9b6b7fb2)
 
-![image.png](image%2012.png)
+![image 13](https://github.com/user-attachments/assets/7aca2754-9781-43d3-b3ef-e61475c2db78)
 
-![image.png](image%2013.png)
 
 ### Validation
 
